@@ -1,0 +1,20 @@
+.galery {
+    box-sizing: border-box;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    overflow: auto;
+    display: flex;
+    background: var(--tg-theme-bg-color, #212121);
+    height: 54px;
+    padding: 10px;
+    transition: all .3s;
+    border-bottom: 0.1px solid var(--tg-theme-text-color, #ffffff);;
+}
+
+.positionsWrapper{
+    padding: 70px 12px 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px
+}

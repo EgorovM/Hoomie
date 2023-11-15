@@ -1,0 +1,93 @@
+.productInfo{
+    margin-bottom: 40px;
+}
+
+.productIcon{
+   width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    box-shadow: 0px 0px 10px 5px var(--tg-theme-secondary-bg-color, #181818);
+}
+
+.productTitle{
+    margin: 30px 10px 8px 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.productDescription{
+    color: var(--tg-theme-hint-color, #aaaaaa);
+    margin-bottom: 16px;
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+.notification{
+    box-shadow: 0px 0px 70px 2px var(--tg-theme-secondary-bg-color, #181818);
+    margin: 10px;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 12px;
+}
+
+.notification .title{
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--tg-theme-hint-color, #aaaaaa);
+    padding: 1px;
+}
+
+.notification .count{
+    padding: 7px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: var(--tg-theme-text-color, #ffffff);
+}
+
+.bottomBar{
+    border-top: 0.002em solid var(--tg-theme-hint-color, #aaaaaa);
+    box-sizing: border-box;
+    z-index: 10;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--tg-theme-bg-color, #212121);
+    color: var(--tg-theme-text-color, #ffffff);
+    padding: 8px 15px 2px 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.counterWrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.counterWrapper .button{
+    background: var(--tg-theme-secondary-bg-color, #181818);
+    color: var(--tg-theme-text-color, #ffffff);
+    border: 1px solid var(--tg-theme-button-color, #8774e1);
+    height: 50px;
+    width: 60px;
+    font-weight: bold;
+    font-size: 20px;
+    transition: all ease 0.2s;
+    border-radius: 8px !important;
+}
+
+ .button{
+    background: var(--tg-theme-button-color, #8774e1);
+    color: var(--tg-theme-button-text-color, #ffffff);
+    border: 1px solid var(--tg-theme-button-color, #8774e1);
+    height: 50px;
+    width: 100%;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 10px;
+    transition: all ease 0.2s;
+}

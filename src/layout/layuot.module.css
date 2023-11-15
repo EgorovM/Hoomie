@@ -1,0 +1,6 @@
+.layout{
+    width: 100%;
+    background: var(--tg-theme-bg-color, #212121);
+    min-height: 100vh;
+    position: relative;
+}
