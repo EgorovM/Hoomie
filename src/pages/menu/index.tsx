@@ -4,7 +4,6 @@ import {Category, Position} from "../../API/types";
 import cn from './menu.module.css'
 import CategoryTag from "./CategoryTag";
 import PositionCard from "./PositionCard";
-import positionCard from "./PositionCard";
 import {ShippingCardContext} from "../../context/shippingCardContext";
 
 const Menu = () => {
@@ -17,26 +16,35 @@ const Menu = () => {
 
   useEffect(() => {
     menuRequest.getCategories().then(({data}) => setCategories(data))
+    menuRequest.getPositions().then(({data}) => SetPositions(data))
+  }, [])
+
+  useEffect(() => {
     if (selectedCategory) {
       menuRequest.getPositionsByCategory(selectedCategory.id).then(({data}) => SetPositions(data))
     } else {
       menuRequest.getPositions().then(({data}) => SetPositions(data))
     }
-
-  }, [])
+  }, [selectedCategory])
 
   return (
     <>
-        <div className={cn.galery}>
-          {categories?.map((category) =>
-            <CategoryTag
-              category={category}
-              selected={category.id === selectedCategory?.id}
-              onClick={()=>setSelectedCategory(category)}
-            />
-          )}
-        </div>
-      <div className={ cn.positionsWrapper}>
+      <div className={cn.galery}>
+        {categories?.map((category) =>
+          <CategoryTag
+            category={category}
+            selected={category.id === selectedCategory?.id}
+            onClick={() => {
+              if (category.id === selectedCategory?.id) {
+                setSelectedCategory(undefined)
+              } else {
+                setSelectedCategory(category)
+              }
+            }}
+          />
+        )}
+      </div>
+      <div className={cn.positionsWrapper}>
         {positions?.map(position => <PositionCard position={position} count={shippingCard[position.id]}/>)}
       </div>
     </>
