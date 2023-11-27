@@ -11,7 +11,5 @@ const root = ReactDOM.createRoot(
 console.log(root)
 
 root.render(
-  <React.StrictMode>
     <RouterProvider router={router}/>
-  </React.StrictMode>
 );

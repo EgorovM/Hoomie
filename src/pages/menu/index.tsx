@@ -32,6 +32,7 @@ const Menu = () => {
       <div className={cn.galery}>
         {categories?.map((category) =>
           <CategoryTag
+            key={category.id}
             category={category}
             selected={category.id === selectedCategory?.id}
             onClick={() => {
@@ -45,7 +46,7 @@ const Menu = () => {
         )}
       </div>
       <div className={cn.positionsWrapper}>
-        {positions?.map(position => <PositionCard position={position} count={shippingCard[position.id]}/>)}
+        {positions?.map(position => <PositionCard key={position.id} position={position} count={shippingCard[position.id]}/>)}
       </div>
     </>
   );
