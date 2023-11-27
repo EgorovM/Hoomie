@@ -91,7 +91,6 @@ const Layout = () => {
 
   return (
     <ShippingCardContext.Provider value={{shippingCard, addToShippingCard, removeFromShippingCard}}>
-      <button onClick={sendDataToTelegram}>hj</button>
       <div className={cn.layout}>
         {outlet}
       </div>
