@@ -69,12 +69,11 @@ const Layout = () => {
 
   const sendDataToTelegram = () => {
     // @ts-ignore
-    window.Telegram.WebApp.sendData(JSON.stringify(shippingCard));
+    tg.sendData(JSON.stringify(shippingCard));
   }
 
   const isButtonVisible = Object.values(shippingCard).length
   useEffect(() => {
-    // @ts-ignore
     if (isButtonVisible && tg) {
       tg.MainButton.setText('Я заполнил заказ');
       tg.MainButton.show();
@@ -83,7 +82,7 @@ const Layout = () => {
     }
     return () => {
       if(tg){
-        tg.MainButton.hide();
+        tg.MainButton.diasble();
         tg.MainButton.offClick(sendDataToTelegram);
       }
     };
