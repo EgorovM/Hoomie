@@ -82,7 +82,7 @@ const Layout = () => {
     }
     return () => {
       if(tg){
-        tg.MainButton.diasble();
+        tg.MainButton.disable();
         tg.MainButton.offClick(sendDataToTelegram);
       }
     };
